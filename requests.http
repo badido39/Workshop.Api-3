@@ -1,0 +1,19 @@
+@host = http://localhost:5000
+
+### Lister les todos
+GET {{host}}/todos
+
+### Créer un todo
+POST {{host}}/todos
+Content-Type: application/json
+
+{ "title": "Apprendre Docker sans paniquer" }
+
+### Basculer fait / à faire
+PATCH {{host}}/todos/1/toggle
+
+### Supprimer un todo
+DELETE {{host}}/todos/1
+
+### Infos serveur (nom de la machine = id du conteneur quand on est dans Docker)
+GET {{host}}/info
